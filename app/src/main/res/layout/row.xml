@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="230dp"
+    android:id="@+id/mainLayout"
+    android:layout_margin="5dp"
+    android:background="@color/light_gray">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        style="@style/BottyCard">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="150dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="intro"
+                android:id="@+id/intro"
+                android:textColor="@color/Dark_Gray"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textStyle="italic" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Posted by: "/>
+                <TextView
+                    android:id="@+id/autore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="autore"
+                    android:gravity="bottom"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_marginRight="1dp"
+            android:background="@drawable/shape_touch">
+
+            <ImageView
+                android:id="@+id/immagine"
+                android:layout_width="fill_parent"
+                android:layout_height="150dp"
+                android:src="@drawable/wall"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center" />
+
+            <com.botty.dogfeed.Font.style
+                android:id="@+id/titolo"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="titolo"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_gravity="center"
+                android:background="@drawable/shape_touch"
+                android:gravity="bottom"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"/>
+
+        </FrameLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
