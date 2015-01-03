@@ -49,8 +49,8 @@ public class MyActivity extends Fragment implements Observer
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-        View view =  inflater.inflate(R.layout.activity_my, container,
+        // il layout era sbagliato xD
+        View view =  inflater.inflate(R.layout.activity_main, container,
                 false);
 
         //find view
@@ -122,10 +122,8 @@ public class MyActivity extends Fragment implements Observer
     public void update(Observable observable, final Object data) {
 
         listaArticoli = (ArrayList<Articolo>) data;
-        ArticoloAdapter mArticoloAdapter = new ArticoloAdapter(getActivity(),listaArticoli);
-        listViewArticoli.setAdapter(mArticoloAdapter);
+        listViewArticoli.setAdapter( new ArticoloAdapter(getActivity() , listaArticoli) );
 
-        listViewArticoli.setAdapter(new ArticoloAdapter(getActivity(), listaArticoli));
         listViewArticoli.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
