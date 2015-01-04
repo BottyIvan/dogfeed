@@ -1,6 +1,9 @@
 <resources>
-    <style name="Botty_READ" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="android:actionBarStyle">@style/ActionBarStyle</item>
+    <style name="Botty_READ" parent="Theme.AppCompat">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/material_blue_gray_500</item>
+        <item name="colorPrimaryDark">@color/material_blue_gray_700</item>
+        <item name="colorAccent">@color/material_blue_gray_200</item>
         <item name="windowActionBar">false</item>
     </style>
 

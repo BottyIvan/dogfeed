@@ -30,9 +30,7 @@
             android:divider="@color/light_gray"
             android:footerDividersEnabled="false"
             android:headerDividersEnabled="false"
-            android:drawSelectorOnTop="false"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp" />
+            android:drawSelectorOnTop="false" />
 
     </android.support.v4.widget.SwipeRefreshLayout>
 </RelativeLayout>

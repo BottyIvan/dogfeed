@@ -1,19 +1,14 @@
-package com.botty.dogfeed;
+package com.botty.dogfeed.Helper;
 
-import android.graphics.BitmapFactory;
 import android.util.Log;
-import android.util.Xml;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.Observable;

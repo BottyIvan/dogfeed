@@ -1,9 +1,10 @@
-package com.botty.dogfeed;
+package com.botty.dogfeed.Activities;
 
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
@@ -11,10 +12,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.animation.OvershootInterpolator;
 import android.view.animation.ScaleAnimation;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.botty.dogfeed.Fragment.About;
+import com.botty.dogfeed.Fragment.MyActivity;
+import com.botty.dogfeed.Helper.Articolo;
+import com.botty.dogfeed.R;
+import com.koushikdutta.ion.Ion;
 import com.koushikdutta.urlimageviewhelper.UrlImageViewCallback;
 import com.koushikdutta.urlimageviewhelper.UrlImageViewHelper;
 import com.manuelpeinado.fadingactionbar.FadingActionBarHelper;
@@ -25,6 +32,9 @@ import com.manuelpeinado.fadingactionbar.FadingActionBarHelper;
 public class FeedDetailsActivity extends Activity {
 
     private Articolo feed;
+    WebView article;
+    String titolo;
+    String link;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -47,27 +57,18 @@ public class FeedDetailsActivity extends Activity {
 
         if (null != feed) {
             ImageView thumb = (ImageView) findViewById(R.id.featuredImg);
-            UrlImageViewHelper.setUrlDrawable(thumb, feed.getImmagine(),null, 600, new UrlImageViewCallback() {
-                @Override
-                public void onLoaded(ImageView imageView, Bitmap loadedBitmap, String url, boolean loadedFromCache) {
-                    if (!loadedFromCache) {
-                        ScaleAnimation scale = new ScaleAnimation(0, 1, 0, 1, ScaleAnimation.RELATIVE_TO_SELF, .5f, ScaleAnimation.RELATIVE_TO_SELF, .5f);
-                        scale.setDuration(300);
-                        scale.setInterpolator(new OvershootInterpolator());
-                        imageView.startAnimation(scale);
-                    }
-                }
-            });
+            Ion.with(thumb).load(feed.getImmagine());
 
-            // TextView title = (TextView) findViewById(R.id.titolo);
-           // title.setText(feed.getTitolo());
+            article= (WebView) findViewById(R.id.articleTxt);
+            article.setWebViewClient(new WebViewClient());
+            article.setBackgroundColor(Color.TRANSPARENT);
+            Bundle extras = getIntent().getExtras();
+            titolo = extras.getString("titoloArticolo");
+            link = extras.getString("link");
+            String contenuto = extras.getString("contenutoArticolo");
+            article.getSettings().setJavaScriptEnabled(true);
+            article.loadDataWithBaseURL(null, "<style>img{display: inline; height: auto; max-width: 100%;}iframe{max-width: 100%;}</style>\n"+"<h2>"+titolo+"</h2>"+contenuto, null, null, null);
 
-            TextView contenuto = (TextView) findViewById(R.id.contenuto);
-            contenuto.setText(Html.fromHtml(feed.getContenuto(), null, null));
-            contenuto.setMovementMethod(LinkMovementMethod.getInstance());
-
-            TextView categoria = (TextView) findViewById(R.id.categoria);
-            categoria.setText(Html.fromHtml(feed.getCategoria(), null, null));
         }
 
     }
@@ -93,11 +94,6 @@ public class FeedDetailsActivity extends Activity {
         // as you specify a parent activity in AndroidManifest.xml.
         switch (item.getItemId()) {
             case android.R.id.home:
-                return true;
-            case R.id.about:
-                Intent about = new Intent(this, About.class);
-                about.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(about);
                 return true;
         }
         return super.onOptionsItemSelected(item);

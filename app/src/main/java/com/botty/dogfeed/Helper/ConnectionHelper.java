@@ -1,8 +1,6 @@
-package com.botty.dogfeed;
+package com.botty.dogfeed.Helper;
 
 import com.loopj.android.http.*;
-
-import org.apache.http.Header;
 
 /**
  * Created by ivanbotty on 28/08/14.

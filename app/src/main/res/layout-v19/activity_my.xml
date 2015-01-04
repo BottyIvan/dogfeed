@@ -16,9 +16,20 @@
 
         </FrameLayout>
 
-        <include
-            layout="@layout/toolbar"
-            android:id="@+id/toolbar"/>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="25dp"
+                android:id="@+id/status" />
+
+            <include
+                layout="@layout/toolbar"
+                android:id="@+id/toolbar" />
+        </LinearLayout>
 
 
     </RelativeLayout>

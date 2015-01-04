@@ -1,4 +1,4 @@
-package com.botty.dogfeed;
+package com.botty.dogfeed.Helper;
 
 import java.io.Serializable;
 import java.util.Date;

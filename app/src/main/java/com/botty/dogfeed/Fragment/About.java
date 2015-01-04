@@ -1,6 +1,7 @@
 package com.botty.dogfeed.Fragment;
 
 import android.app.Fragment;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -30,9 +31,12 @@ public class About extends Fragment {
         View view = inflater.inflate(R.layout.activity_about, container,
                 false);
 
-        CircularImageView imgRound = (CircularImageView) view.findViewById(R.id.Circle);
-
         mOpenProjList = (ListView) view.findViewById(R.id.openproj);
+
+        View headerView = ((LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.header_about, mOpenProjList, false);
+        mOpenProjList.addHeaderView(headerView, null, false);
+
+        CircularImageView imgRound = (CircularImageView) view.findViewById(R.id.Circle);
 
         FloatingActionButton floatingActionButton = (FloatingActionButton) view.findViewById(R.id.button_floating_action);
         floatingActionButton.attachToListView(mOpenProjList);

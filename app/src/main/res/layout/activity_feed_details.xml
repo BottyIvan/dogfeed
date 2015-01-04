@@ -5,64 +5,15 @@
     android:background="@color/light_gray"
     xmlns:fab="http://schemas.android.com/apk/res-auto">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/scrollView"
-        android:layout_gravity="center_horizontal" >
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
-
-            <FrameLayout
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent">
-
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:text="Contenuto"
-                    android:id="@+id/contenuto"
-                    android:layout_marginRight="5dp"
-                    style="@style/BottyCard.noTouch"
-                    android:layout_marginBottom="5dp"
-                    android:textSize="16sp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginLeft="5dp"
-                    android:paddingTop="5dp"
-                    android:paddingBottom="5dp"
-                    android:paddingRight="15dp"
-                    android:paddingLeft="15dp"
-                    android:linksClickable="true" />
-            </FrameLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                style="@style/BottyCard"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:padding="2.5dp"
-                android:layout_marginBottom="5dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Category : "
-                    android:id="@+id/textView" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="New Text"
-                    android:id="@+id/categoria"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-        </LinearLayout>
-    </ScrollView>
+    <com.manuelpeinado.fadingactionbar.view.ObservableWebViewWithHeader
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/articleTxt"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" />
 
 </RelativeLayout>

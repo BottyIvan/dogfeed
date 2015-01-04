@@ -1,36 +1,25 @@
-package com.botty.dogfeed;
+package com.botty.dogfeed.Adapters;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.Drawable;
-import android.media.Image;
-import android.net.Uri;
-import android.os.AsyncTask;
 import android.text.Html;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.OvershootInterpolator;
 import android.view.animation.ScaleAnimation;
-import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.botty.dogfeed.Helper.Articolo;
+import com.botty.dogfeed.R;
+import com.koushikdutta.ion.Ion;
 import com.koushikdutta.urlimageviewhelper.UrlImageViewCallback;
 import com.koushikdutta.urlimageviewhelper.UrlImageViewHelper;
-import com.loopj.android.image.SmartImageView;
 
-import java.io.IOException;
-import java.lang.reflect.Array;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by ivanbotty on 28/08/14.
@@ -80,17 +69,7 @@ public class ArticoloAdapter extends BaseAdapter {
         titolo.setText(Html.fromHtml(articoloCorrente.getTitolo(), null, null));
         intro.setText(Html.fromHtml(articoloCorrente.getIntro(), null, null));
         autore.setText(Html.fromHtml(articoloCorrente.getAutore(), null, null));
-        UrlImageViewHelper.setUrlDrawable(img, articoloCorrente.getImmagine(),null, 600, new UrlImageViewCallback() {
-            @Override
-            public void onLoaded(ImageView imageView, Bitmap loadedBitmap, String url, boolean loadedFromCache) {
-                if (!loadedFromCache) {
-                    ScaleAnimation scale = new ScaleAnimation(0, 1, 0, 1, ScaleAnimation.RELATIVE_TO_SELF, .5f, ScaleAnimation.RELATIVE_TO_SELF, .5f);
-                    scale.setDuration(300);
-                    scale.setInterpolator(new OvershootInterpolator());
-                    imageView.startAnimation(scale);
-                }
-            }
-        });
+        Ion.with(img).centerCrop().error(R.drawable.dog).load(articoloCorrente.getImmagine());
         return vi;
     }
 }

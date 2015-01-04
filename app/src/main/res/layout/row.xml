@@ -4,7 +4,7 @@
     android:layout_width="fill_parent"
     android:layout_height="230dp"
     android:id="@+id/mainLayout"
-    android:layout_margin="5dp"
+    android:layout_margin="15dp"
     android:background="@color/light_gray">
 
     <RelativeLayout
@@ -43,7 +43,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Posted by: "/>
+                    android:text="Posted by: "
+                    android:textColor="#555" />
                 <TextView
                     android:id="@+id/autore"
                     android:layout_width="wrap_content"
@@ -51,13 +52,14 @@
                     android:text="autore"
                     android:gravity="bottom"
                     android:paddingTop="5dp"
-                    android:paddingBottom="5dp" />
+                    android:paddingBottom="5dp"
+                    android:textColor="#555" />
             </LinearLayout>
 
         </LinearLayout>
 
         <FrameLayout
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="150dp"
             android:layout_marginRight="1dp"
             android:background="@drawable/shape_touch">
@@ -68,7 +70,7 @@
                 android:layout_height="150dp"
                 android:src="@drawable/wall"
                 android:scaleType="centerCrop"
-                android:layout_gravity="center" />
+                 />
 
             <com.botty.dogfeed.Font.style
                 android:id="@+id/titolo"

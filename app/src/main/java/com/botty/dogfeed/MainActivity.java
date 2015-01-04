@@ -79,8 +79,8 @@ public class MainActivity extends ActionBarActivity {
         mDrawerList.addHeaderView(headerView, null, false);
 
         // Add Drawer Item to dataList
-        dataList.add(new DrawerItem("AndyMon", R.drawable.fag));
-        dataList.add(new DrawerItem("About", R.drawable.fag));
+        dataList.add(new DrawerItem("AndyMon", R.drawable.ic_action_public));
+        dataList.add(new DrawerItem("About", R.drawable.ic_action_about));
 
         adapter = new CustomDrawerAdapter(this, R.layout.custom_drawer_item,
                 dataList);
@@ -105,7 +105,7 @@ public class MainActivity extends ActionBarActivity {
         mDrawerLayout.setDrawerListener(mDrawerToggle);
 
         if (savedInstanceState == null) {
-            SelectItem(2);
+            SelectItem(1);
         }
     }
 
