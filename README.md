@@ -3,7 +3,7 @@ dogfeed
 <h2><strong>Some screen of app :</strong></h2>
 
 <img style="width: 80%" src="https://raw.githubusercontent.com/BottyIvan/dogfeed/master/app/screen/scrolled_home.png">
-<img style="width: 80%" src="https://raw.githubusercontent.com/BottyIvan/dogfeed/master/app/screen/no_scrolled_homepng">
+<img style="width: 80%" src="https://raw.githubusercontent.com/BottyIvan/dogfeed/master/app/screen/no_scrolled_home.png">
 
 <h2><strong>The Librery used:</strong></h2>
 <p><b>NOTE:</b> are too many, so in next update i'll add it</p>
